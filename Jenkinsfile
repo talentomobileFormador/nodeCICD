@@ -3,12 +3,9 @@ pipeline {
     stages {
         stage('docker build') {
             steps {
-                script {
-                    sh "docker build -t ${name-app} ."
-                }
-                script {
-                    sh "docker tag ${name-app} formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
-                }
+                sh "docker ps"
+                sh "docker build -t ${name-app} ."
+                sh "docker tag ${name-app} formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
             }
         }
         stage('docker push') {
