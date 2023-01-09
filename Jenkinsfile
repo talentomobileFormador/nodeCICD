@@ -4,6 +4,7 @@ pipeline {
         stage('docker build') {
             steps {
                 echo 'test'
+                echo 'test'
                 script {
                     sh "docker build -t ${name-app} ."
                 }
