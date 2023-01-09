@@ -10,9 +10,7 @@ pipeline {
         }
         stage('docker push') {
             steps {
-                script {
-                    sh "docker push formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
-                }
+                sh "docker push formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
             }
         }
     }
