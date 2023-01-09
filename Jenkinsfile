@@ -4,6 +4,7 @@ pipeline {
         stage('docker build') {
             steps {
                 sh "docker ps"
+                sh "docker pull node:16"
                 sh "docker build -t ${name-app} ."
                 sh "docker tag ${name-app} formadorfullstacktalentomobile/nodecicd:${BUILD_NUMBER}"
             }
